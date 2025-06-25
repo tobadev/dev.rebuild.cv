@@ -1,0 +1,55 @@
+{
+  "project": "dev.rebuild.cv",
+  "goals": [
+    "Build a fast, intuitive CV builder MVP using Next.js App Router",
+    "Use shadcn/ui for all UI components",
+    "Integrate OpenAI to assist users in writing their CVs",
+    "Enable PDF export with clean default template"
+  ],
+  "rules": {
+    "fileStructure": {
+      "enforceModularStructure": true,
+      "groupComponentsByDomain": true,
+      "separateAPIRoutesFromPages": true
+    },
+    "ui": {
+      "useShadcnUI": true,
+      "noCustomComponentLibraries": true,
+      "followTailwind best practices": true,
+      "mobileFirst": true
+    },
+    "editor": {
+      "noDeadCode": true,
+      "autoFixLintErrors": true,
+      "tailwindClassOrderEnforced": true,
+      "commentEveryAI-SuggestedFunction": true
+    },
+    "auth": {
+      "useClerkIfTimeAllows": true,
+      "fallbackToNextAuth": true
+    },
+    "ai": {
+      "OpenAIAssistantMustBeHelpfulToStudents": true,
+      "coldStartPromptsRequired": true,
+      "no hallucinated experience suggestions": true
+    },
+    "pdfExport": {
+      "mustSupportDownload": true,
+      "doNotBlockUIDuringExport": true
+    },
+    "mvpDeadline": "2025-07-10"
+  },
+  "banned": [
+    "useContext for global state (use Zustand instead)",
+    "component libraries like MUI, Chakra, DaisyUI",
+    "slow build dependencies",
+    "untyped fetch calls"
+  ],
+  "todo": [
+    "Build auth flow",
+    "Implement dashboard page with CV listing",
+    "Integrate markdown-based CV editor",
+    "Add AI assistant hook with prompt templates",
+    "Support PDF export from preview"
+  ]
+}
